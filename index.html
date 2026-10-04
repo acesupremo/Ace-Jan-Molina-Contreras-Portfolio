@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="day">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ace Jan Molina Contreras — Full-Stack Developer</title>
+<meta name="description" content="Full-Stack Developer building practical web systems and digital solutions.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#fff;--tx:#0a0a0a;--mu:#6d6d6d;--sb:#fafafa;--bd:#e4e4e4;--hv:#f4f4f4;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace;--sans:Inter,system-ui,-apple-system,sans-serif;--t:.8s cubic-bezier(.4,0,.2,1)}
+[data-theme=night]{--bg:#000;--tx:#fff;--mu:#8d8d8d;--sb:#000;--bd:#262626;--hv:#0f0f0f}
+*{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--bg);color:var(--tx);line-height:1.6;transition:background var(--t),color var(--t);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.mono,.lbl{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase}
+#sb{position:fixed;inset:0 auto 0 0;width:248px;background:var(--sb);border-right:1px solid var(--bd);padding:34px 28px 26px;display:flex;flex-direction:column;z-index:20;transition:background var(--t),border-color var(--t)}
+.brand b{display:block;font-weight:800;font-size:19px;letter-spacing:.02em}.brand span{font-family:var(--mono);font-size:10.5px;color:var(--mu);letter-spacing:.1em}
+.nav{margin-top:54px;display:grid;gap:14px}
+.nav a{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--mu);display:flex;align-items:center;gap:0;transition:color .3s}
+.nav a:before{content:"";height:1px;width:0;background:var(--tx);margin-right:0;transition:width .4s,margin .4s}
+.nav a:hover,.nav a.on{color:var(--tx)}.nav a.on:before{width:18px;margin-right:10px}
+.modes{display:flex;gap:14px;margin-top:auto;padding-bottom:22px}
+.modes button{font-family:var(--mono);font-size:11px;letter-spacing:.08em;color:var(--mu);padding-bottom:3px;border-bottom:1px solid transparent;transition:.3s}
+.modes button.on{color:var(--tx);border-color:var(--tx)}
+.sf{border-top:1px solid var(--bd);padding-top:18px;display:grid;gap:5px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.sf .loc{color:var(--mu);margin-bottom:8px}.sf a{color:var(--mu);transition:.3s}.sf a:hover{color:var(--tx);transform:translateX(3px)}.sf small{color:var(--mu);margin-top:12px;font-size:10px}
+.vw{display:grid;gap:7px;color:var(--tx);margin-bottom:12px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}.vw div{display:flex;align-items:center;gap:8px}.vw em{font-style:normal;color:var(--mu)}
+.vl{list-style:none;display:grid;gap:5px;font-size:10px;color:var(--mu)}.vl li{display:flex;align-items:center;gap:7px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.dt{width:6px;height:6px;border-radius:50%;border:1px solid var(--mu);flex:none}.dt.on{background:var(--tx);border-color:var(--tx)}
+.vw i{width:7px;height:7px;border-radius:50%;background:var(--tx);animation:pl 2s ease-in-out infinite}@keyframes pl{50%{opacity:.25}}
+#ov .vw{font-family:var(--mono);font-size:12px;margin-bottom:18px}
+#top{display:none}
+main{margin-left:248px}
+section{padding:110px 6vw;border-bottom:1px solid var(--bd);transition:border-color var(--t)}
+.lbl{color:var(--mu);margin-bottom:26px;display:block}
+h2{font-weight:800;font-size:clamp(30px,4.2vw,58px);line-height:1.04;letter-spacing:-.025em;max-width:900px}
+#home{min-height:100vh;display:grid;grid-template-columns:1.1fr .9fr;gap:5vw;align-items:center}
+h1{font-weight:800;font-size:clamp(46px,7.2vw,112px);line-height:.92;letter-spacing:-.04em}
+h1 span{display:block}.role{font-family:var(--mono);font-size:12.5px;letter-spacing:.14em;margin:30px 0 14px}
+.desc{color:var(--mu);max-width:430px;font-size:17px}
+.cta{display:flex;gap:12px;margin-top:32px;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;padding:13px 22px;border:1px solid var(--tx);transition:.3s;display:inline-block}
+.btn:hover{background:var(--tx);color:var(--bg)}.btn.f{background:var(--tx);color:var(--bg)}.btn.f:hover{background:transparent;color:var(--tx)}
+.pf{position:relative;width:100%;max-width:460px;margin-left:auto;aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:1px solid var(--bd);background:var(--hv);user-select:none;-webkit-tap-highlight-color:transparent}
+.pf img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 18%;opacity:0;transition:opacity .55s ease,transform 1.2s ease}
+[data-theme=day] .pf:not(.h) .dn,[data-theme=day] .pf.h .dh,[data-theme=night] .pf:not(.h) .nn,[data-theme=night] .pf.h .nh{opacity:1}
+.pf:hover img{transform:scale(1.025)}
+.cap{position:absolute;left:14px;bottom:12px;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:#fff;mix-blend-mode:difference}
+.ab{display:grid;grid-template-columns:1fr 1fr;gap:5vw;margin-top:44px;color:var(--mu);font-size:16.5px}.ab p+p{margin-top:16px}
+.proc{display:flex;flex-wrap:wrap;gap:6px 0;margin-top:48px;font-family:var(--mono);font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.proc span:not(:last-child):after{content:"→";margin:0 12px;color:var(--mu)}
+.pj{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:30px 0;border-top:1px solid var(--bd);position:relative;transition:padding .4s,background .4s,border-color var(--t)}
+.pj:last-child{border-bottom:1px solid var(--bd)}
+.pj:hover{background:var(--hv);padding-left:18px;padding-right:18px}
+.pj .n{font-family:var(--mono);font-size:12px;color:var(--mu)}
+.pj h3{font-weight:800;font-size:clamp(24px,3.4vw,46px);letter-spacing:-.025em;line-height:1;display:inline-block;transition:transform .4s;background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat}
+.pj:hover h3{transform:translateX(8px);background-size:100% 2px;padding-bottom:4px}
+.pj p{color:var(--mu);font-size:14.5px;margin-top:10px}.pj .st{font-family:var(--mono);font-size:11px;letter-spacing:.05em;color:var(--mu);margin-top:6px}
+.pj .ar{font-size:28px;transition:transform .4s}.pj:hover .ar{transform:translate(8px,-4px)}
+.pv{position:absolute;right:90px;top:50%;width:230px;height:140px;border:1px solid var(--bd);background:var(--bg);transform:translateY(-50%) scale(.9);opacity:0;pointer-events:none;transition:.45s;display:flex;align-items:flex-end;gap:5px;padding:14px}
+.pv i{flex:1;background:var(--tx);opacity:.8}.pv em{position:absolute;top:8px;left:10px;font:normal 9px var(--mono);letter-spacing:.1em;color:var(--mu)}
+.pj:hover .pv{opacity:1;transform:translateY(-50%) scale(1)}
+.sk{display:grid;grid-template-columns:repeat(2,1fr);gap:0 5vw;margin-top:44px}
+.sk div{padding:26px 0;border-top:1px solid var(--bd)}.sk h4{font-family:var(--mono);font-size:11.5px;letter-spacing:.1em;color:var(--mu);margin-bottom:8px;font-weight:500}.sk p{font-size:19px;font-weight:500;line-height:1.5}
+.tl{margin-top:44px;border-left:1px solid var(--bd);margin-left:4px}
+.tl div{position:relative;padding:0 0 38px 34px}.tl div:before{content:"";position:absolute;left:-5px;top:7px;width:9px;height:9px;background:var(--tx)}
+.tl .y{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:var(--mu)}.tl h4{font-size:20px;font-weight:600;margin:2px 0}.tl p{color:var(--mu);font-size:15px;max-width:620px}
+#contact h2{font-size:clamp(40px,7vw,104px);line-height:.95}
+.cl{margin-top:44px;display:grid;max-width:620px}.cl a{display:flex;justify-content:space-between;padding:18px 0;border-top:1px solid var(--bd);font-family:var(--mono);font-size:13px;transition:.3s}.cl a:last-child{border-bottom:1px solid var(--bd)}.cl a:hover{padding-left:12px;padding-right:12px;background:var(--hv)}.cl span{color:var(--mu)}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .9s,transform .9s}.rv.in{opacity:1;transform:none}
+#ov{position:fixed;inset:0;background:var(--bg);z-index:40;padding:90px 8vw 40px;display:flex;flex-direction:column;opacity:0;visibility:hidden;transition:opacity .4s,visibility .4s,background var(--t)}
+#ov.o{opacity:1;visibility:visible}#ov a{font-weight:800;font-size:38px;letter-spacing:-.02em;line-height:1.35;display:block}#ov .modes{margin-top:auto}
+@media(max-width:900px){
+#sb{display:none}main{margin-left:0}
+#top{display:flex;position:fixed;top:0;left:0;right:0;height:60px;align-items:center;justify-content:space-between;padding:0 6vw;background:var(--bg);border-bottom:1px solid var(--bd);z-index:50;transition:background var(--t)}
+#top b{font-weight:800;letter-spacing:.02em}
+section{padding:80px 6vw}#home{grid-template-columns:1fr;padding-top:100px;min-height:auto}.pf{margin:0 auto;max-width:360px;order:-1}
+.ab,.sk{grid-template-columns:1fr}.pv{display:none}.pj{grid-template-columns:36px 1fr auto;gap:12px}.btn{padding:14px 20px}}
+@media(prefers-reduced-motion:reduce){*{transition-duration:.01s!important;scroll-behavior:auto!important}}
+</style></head>
+<body>
+<aside id="sb"><div class="brand"><b>ACE JAN</b><span>FULL-STACK DEVELOPER</span></div>
+<nav class="nav" id="nav"></nav>
+<div class="modes" data-modes></div>
+<div class="sf"><div class="vw" data-vw><div><i></i><span data-live>—</span><em>viewing now</em></div><div><span data-total>—</span><em>total viewers</em></div><div><em>recent viewers · anonymous</em></div><ul class="vl" data-list><li>—</li></ul></div><div class="loc">MANILA, PHILIPPINES</div><a href="https://github.com/acesupremo" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn ↗</a><a href="https://www.facebook.com/acejan.contreras.7/" target="_blank" rel="noopener">Facebook ↗</a><a href="mailto:acejan08@gmail.com">Email ↗</a><small>© 2026 ACE JAN</small></div></aside>
+<header id="top"><b>ACE JAN</b><button class="mono" id="menu">Menu</button></header>
+<div id="ov"><nav id="onav"></nav><div class="vw" data-vw><div><i></i><span data-live>—</span><em>viewing now</em></div><div><span data-total>—</span><em>total viewers</em></div><div><em>recent viewers · anonymous</em></div><ul class="vl" data-list><li>—</li></ul></div><div class="modes" data-modes></div></div>
+
+<main>
+<section id="home"><div>
+<h1><span>ACE JAN</span><span>MOLINA</span><span>CONTRERAS</span></h1>
+<p class="role">FULL-STACK DEVELOPER</p>
+<p class="desc">I build practical web systems and digital solutions that turn real-world problems into usable software.</p>
+<div class="cta"><a class="btn f" href="#work">View Work</a><a class="btn" href="Ace_Jan_Contreras.pdf" download>Resume</a><a class="btn" href="#contact">Contact</a></div></div>
+<div class="pf" id="pf" aria-label="Profile photo — hover or tap for alternate pose">
+<img class="dn" src="profile-day-normal.webp" alt="Ace Jan Contreras"><img class="dh" src="profile-day-hover.webp" alt=""><img class="nn" src="profile-night-normal.webp" alt=""><img class="nh" src="profile-night-hover.webp" alt="">
+<span class="cap">ACE JAN — PHILIPPINES</span></div></section>
+
+<section id="about" class="rv"><span class="lbl">02 — About</span><h2>I BUILD SYSTEMS THAT SOLVE REAL PROBLEMS.</h2>
+<div class="ab"><div><p>I'm a Full-Stack and Web System Developer helping businesses, organizations and entrepreneurs replace manual work with reliable, easy-to-use software.</p><p>My focus is web applications, business management systems, database-driven apps, automation and API integration — backed by system analysis and careful UI/UX implementation.</p></div>
+<div><p>I work across the whole software development lifecycle, so a system is planned, built, tested and maintained as one coherent thing.</p></div></div>
+<div class="proc" id="proc"></div></section>
+
+<section id="work" class="rv"><span class="lbl">03 — Work</span><div id="pjs"></div></section>
+
+<section id="skills" class="rv"><span class="lbl">04 — Skills</span><h2>TOOLS I WORK WITH.</h2><div class="sk" id="sk"></div></section>
+
+<section id="experience" class="rv"><span class="lbl">05 — Experience</span><h2>BACKGROUND.</h2><div class="tl">
+<div><span class="y">EDUCATION</span><h4>BS Information Systems</h4><p>Makati Science Technological Institute of the Philippines (MSTIP).</p></div>
+<div><span class="y">2023</span><h4>TOPCIT Participant</h4><p>Participated in the Test of Practical Competency in ICT under MSTIP.</p></div>
+<div><span class="y">FREELANCE</span><h4>Freelance Web &amp; System Developer</h4><p>Custom web systems for cafés, cooperatives, dealerships and community organizations.</p></div>
+<div><span class="y">PROJECTS</span><h4>Capstone &amp; Selected Systems</h4><p>Capstone system plus POS, inventory, reservation, payroll and information-management systems listed under Work.</p></div></div></section>
+
+<section id="contact" class="rv"><span class="lbl">06 — Contact</span><h2>LET'S BUILD SOMETHING.</h2>
+<p class="desc" style="margin-top:26px">Have a project, system idea, or business process that needs a digital solution?</p>
+<div class="cl"><a href="mailto:acejan08@gmail.com">Email <span>acejan08@gmail.com</span></a><a href="https://www.facebook.com/acejan.contreras.7/" target="_blank" rel="noopener">Facebook <span>↗</span></a><a href="https://github.com/acesupremo" target="_blank" rel="noopener">GitHub <span>↗</span></a><a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener">LinkedIn <span>↗</span></a></div></section>
+</main>
+
+<script>
+const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const secs=[["home","Home"],["about","About"],["work","Work"],["skills","Skills"],["experience","Experience"],["contact","Contact"]];
+$('#nav').innerHTML=secs.map((s,i)=>`<a href="#${s[0]}" data-s="${s[0]}">0${i+1} — ${s[1].toUpperCase()}</a>`).join('');
+$('#onav').innerHTML=secs.map(s=>`<a href="#${s[0]}">${s[1].toUpperCase()}</a>`).join('');
+$('#proc').innerHTML=["Requirements","Planning","UI/UX","Development","Database","Testing","Deployment","Maintenance"].map(x=>`<span>${x}</span>`).join('');
+const P=[["KANTO KLASIK","Restaurant Information Management System","PHP / MySQL / Bootstrap / JavaScript"],["GYMFIT","Fitness Management System","React / Node.js / MySQL"],["YOUR NEIGHBOR'S CAFE","Reservation System","PHP / MySQL / QR"],["KRISTEL'S CAKES","Cakes & Pastry Online Store","React / Node.js / Express / MongoDB"],["CYCLEMAR","Motorcycle Dealer Inventory System","PHP / Bootstrap / MySQL"],["SWEET HEART TREATS","Cafe POS & Inventory System","Java / NetBeans / MySQL"],["BARANGAY PAYATAS B","Information Management System","PHP / TCPDF / MySQL"],["BYTE SALES","Wholesale Ordering System","PHP / MySQL"],["ATLAS BOUNCER SERVICES","Payroll System","Visual Basic / MS Access / SQL"],["INVENTORY SYSTEM","Web-Based Inventory Management","PHP / MySQL / Chart.js"]];
+$('#pjs').innerHTML=P.map((p,k)=>`<a class="pj" href="https://github.com/acesupremo" target="_blank" rel="noopener"><span class="n">${String(k+1).padStart(2,'0')}</span><div><h3>${p[0]}</h3><p>${p[1]}</p><div class="st">${p[2]}</div></div><span class="ar">→</span><div class="pv"><em>PREVIEW</em>${[...Array(8)].map((_,i)=>`<i style="height:${25+((i*41+k*29)%65)}%"></i>`).join('')}</div></a>`).join('');
+const S=[["Frontend","HTML / CSS / JavaScript / Bootstrap / React / TypeScript"],["Backend","PHP / Node.js / Express / C# / .NET"],["Database","MySQL / MongoDB / Microsoft Access"],["Tools","Git / GitHub / VS Code / XAMPP / NetBeans"],["Other","REST APIs / AJAX / Chart.js / Authentication / Reporting / SMS API"],["AI & Machine Learning","AI-Assisted Development / Prompt Engineering / AI API Integration / Python"]];
+$('#sk').innerHTML=S.map(s=>`<div><h4>${s[0].toUpperCase()}</h4><p>${s[1]}</p></div>`).join('');
+// theme
+let mode='auto';try{mode=localStorage.getItem('mode')||'auto'}catch(e){}
+const auto=()=>{const h=new Date().getHours();return h>=6&&h<18?'day':'night'};
+function apply(){document.documentElement.dataset.theme=mode==='auto'?auto():mode;$$('[data-modes] button').forEach(b=>b.classList.toggle('on',b.dataset.m===mode))}
+$$('[data-modes]').forEach(m=>{m.innerHTML=[["auto","○ Auto"],["day","☼ Day"],["night","☾ Night"]].map(x=>`<button data-m="${x[0]}">${x[1]}</button>`).join('');m.onclick=e=>{const b=e.target.closest('button');if(!b)return;mode=b.dataset.m;try{localStorage.setItem('mode',mode)}catch(e){}apply()}});
+apply();setInterval(()=>mode==='auto'&&apply(),60000);
+// mobile menu
+$('#menu').onclick=()=>{const o=$('#ov').classList.toggle('o');$('#menu').textContent=o?'Close':'Menu'};
+$('#onav').onclick=e=>{if(e.target.closest('a')){$('#ov').classList.remove('o');$('#menu').textContent='Menu'}};
+// active section + reveal
+const so=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&$$('#nav a').forEach(a=>a.classList.toggle('on',a.dataset.s===e.target.id))),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>so.observe($('#'+s[0])));
+const io=new IntersectionObserver(es=>es.forEach(e=>e.isIntersecting&&(e.target.classList.add('in'),io.unobserve(e.target))),{threshold:.06});$$('.rv').forEach(x=>io.observe(x));
+// profile: hover (mouse) / tap (touch); missing alternates fall back to the day-normal photo
+const pf=$('#pf');$$('#pf img').forEach(i=>i.onerror=()=>{i.onerror=null;i.src='profile-day-normal.webp'});
+pf.addEventListener('pointerenter',e=>e.pointerType==='mouse'&&pf.classList.add('h'));
+pf.addEventListener('pointerleave',e=>e.pointerType==='mouse'&&pf.classList.remove('h'));
+pf.addEventListener('click',e=>{if(matchMedia('(hover:none)').matches)pf.classList.toggle('h')});
+
+// live + total viewers (real counts via Firebase Realtime Database; shows — until configured)
+const FIREBASE={apiKey:"",databaseURL:"",projectId:""}; // paste your Firebase web config here
+if(FIREBASE.databaseURL){
+ const L=u=>new Promise(r=>{const s=document.createElement('script');s.src=u;s.onload=r;document.head.appendChild(s)});
+ const B='https://www.gstatic.com/firebasejs/10.12.2/';
+ L(B+'firebase-app-compat.js').then(()=>L(B+'firebase-database-compat.js')).then(()=>{
+  firebase.initializeApp(FIREBASE);const db=firebase.database();
+  const put=(k,n)=>$$('[data-'+k+']').forEach(el=>el.textContent=n.toLocaleString());
+  // anonymous, coarse info only: device, browser, city (from timezone), where they came from
+  const ua=navigator.userAgent,dev=/iPad|Tablet/i.test(ua)?'Tablet':/Mobi|Android|iPhone/i.test(ua)?'Mobile':'Desktop';
+  const br=/Edg\//.test(ua)?'Edge':/OPR\//.test(ua)?'Opera':/Chrome\//.test(ua)?'Chrome':/Firefox\//.test(ua)?'Firefox':/Safari\//.test(ua)?'Safari':'Browser';
+  let city='';try{city=Intl.DateTimeFormat().resolvedOptions().timeZone.split('/').pop().replace(/_/g,' ')}catch(e){}
+  let ref='direct';try{if(document.referrer)ref=new URL(document.referrer).hostname.replace(/^www\./,'')}catch(e){}
+  // log one visit per browser session
+  let vk=null;try{vk=sessionStorage.getItem('vk')}catch(e){}
+  if(!vk){const r=db.ref('visits').push({d:dev,b:br,c:city,r:ref,t:firebase.database.ServerValue.TIMESTAMP});vk=r.key;try{sessionStorage.setItem('vk',vk)}catch(e){}db.ref('stats/total').transaction(v=>(v||0)+1)}
+  // presence: this tab counts as "viewing now" until it closes
+  const me=db.ref('presence').push();
+  db.ref('.info/connected').on('value',s=>{if(s.val()){me.onDisconnect().remove();me.set(vk)}});
+  let V={},O={};
+  const ago=t=>{const m=Math.max(0,Math.round((Date.now()-t)/6e4));return m<1?'just now':m<60?m+'m ago':m<1440?Math.round(m/60)+'h ago':Math.round(m/1440)+'d ago'};
+  const draw=()=>{const ks=Object.keys(V).sort((x,y)=>(V[y].t||0)-(V[x].t||0)).slice(0,4);
+   $$('[data-list]').forEach(ul=>{ul.textContent='';if(!ks.length){const li=document.createElement('li');li.textContent='—';ul.appendChild(li)}
+    ks.forEach(k=>{const v=V[k],on=!!O[k],li=document.createElement('li'),dt=document.createElement('span'),tx=document.createElement('span');
+     dt.className='dt'+(on?' on':'');tx.textContent=[v.d,v.b,v.c,on?'online':ago(v.t||Date.now())].filter(Boolean).join(' · ');li.title=v.r?'from: '+v.r:'';li.append(dt,tx);ul.appendChild(li)})})};
+  db.ref('presence').on('value',s=>{O={};s.forEach(c=>{if(typeof c.val()==='string')O[c.val()]=1});put('live',s.numChildren());draw()});
+  db.ref('stats/total').on('value',s=>put('total',s.val()||0));
+  db.ref('visits').orderByChild('t').limitToLast(8).on('value',s=>{V=s.val()||{};draw()});
+  setInterval(draw,6e4);
+ }).catch(()=>{});
+}
+</script></body></html>
